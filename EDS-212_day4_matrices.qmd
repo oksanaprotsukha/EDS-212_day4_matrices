@@ -1,0 +1,18 @@
+---
+title: "EDS-212_Day4_matrices"
+author: "Oksana Protsukha"
+format: html
+editor: visual
+---
+
+## Matrices
+
+### Create vectors
+
+```{r}
+# --- function to create vectors: c()
+rain <- c(3, 5, 10.1, 6)
+
+scaled_rain <- 5 * rain
+scaled_rain
+```
