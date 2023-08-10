@@ -64,3 +64,32 @@ dogs
 # --- dotproduct 
 dogs %*% cats
 ```
+
+### Leslie matrix example
+
+```{r}
+# --- Predictions of the number of adult females in the next reproduction cycle
+insect_leslie <- (matrix(data = c(0, 0, 600, 0.2, 0, 0, 0, 0.08, 0), 
+                         nrow = 3, 
+                         ncol = 3, 
+                         byrow = TRUE))
+#insect_leslie
+
+# --- eggs = 1200, larva = 700, female adults in the current cycle = 500
+# --- R treats insect_y0 expression as a matrix with a single column
+insect_y0 <- c(1200, 700, 500)
+
+```
+
+#### Find the population structure for each life stage at t= 1 year
+
+```{r}
+insect_y1 <- insect_leslie %*% insect_y0
+```
+
+#### Find the population structure for each life stage at t= 2 year 
+
+```{r}
+# --- insect_leslie = coefficients; insect_y1 = outputs from cycle 1
+insect_y2 <- insect_leslie %*% insect_y1
+```
