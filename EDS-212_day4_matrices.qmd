@@ -50,3 +50,17 @@ matrixA <- matrix(data = seq(from = 2, to = 5, length = 10),
 ```{r}
 my_matrix + matrixA
 ```
+
+### Matrix multiplication
+
+```{r}
+cats <- matrix(data = c(0, 4 ,3, 1), nrow = 2, ncol = 2, byrow = TRUE)
+cats
+dogs <- matrix(data = c(6, -3, 0, 2), nrow = 2, ncol = 2, byrow = TRUE)
+dogs
+```
+
+```{r}
+# --- dotproduct 
+dogs %*% cats
+```
